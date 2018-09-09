@@ -24,6 +24,6 @@ def dataprocess():
         return "短信发送成功",200
 app.run(
     host="0.0.0.0",
-    port = 53333,
+    port = 8089,
     debug=True
 )
