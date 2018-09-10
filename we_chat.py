@@ -1,9 +1,9 @@
 import requests
 import json
-def sendwx(content):
+def sendwx(content,sendKey):
     url = "https://pushbear.ftqq.com/sub"
     data={
-        "sendkey": "3288-cddd2195e76cfba892c071d7cfac279f",
+        "sendkey": sendKey,
         "text": "听云告警",
         "desp":content
     }
