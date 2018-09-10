@@ -21,7 +21,7 @@ def test_dataProcess():
     if request.method =="POST":
         print(request.form)
         content = request.form["content"]
-        key = request.form["key"]
+        key = str(request.form["key"])
         res = utils(content,key)
         return  res
     else:
@@ -32,7 +32,7 @@ def product_dataProcess():
     if request.method =="POST":
         print(request.form)
         content = request.form["content"]
-        key = request.form["key"]
+        key = str(request.form["key"])
         res = utils(content,key)
         return  res
     else:
