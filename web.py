@@ -7,12 +7,12 @@ def utils(mobiles_array,content):
     for mobile in mobiles_array:
         if content and mobile:
             we_chat.sendwx(content, "3288-cddd2195e76cfba892c071d7cfac279f")
-            content_value = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())) + " 短信发送成功 " + " 内容：" + \
-                            request.form["content"] + " " + "接收人:" + " " + mobile
+            content_value = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())) + " 推送成功 " + " 内容：" + \
+                            request.form["content"]
             log_out.log_out(content_value)
         else:
-            content_value = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())) + " 短信发送失败 " + " 内容：" + \
-                            request.form["content"] + " " + "接收人:" + " " + mobile
+            content_value = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())) + " 推送失败 " + " 内容：" + \
+                            request.form["content"]
             log_out.log_out(content_value)
             return "推送失败请确认请求参数", 500
     return "推送成功", 200
