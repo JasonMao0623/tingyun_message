@@ -22,7 +22,8 @@ def test_dataProcess():
         mobiles_array = request.form["mobile"].split(",")
         content = request.form["content"]
         constumer = request.form["name"]
-        res = utils(mobiles_array,content,"3288-cddd2195e76cfba892c071d7cfac279f",constumer)
+        key = request.form["key"]
+        res = utils(mobiles_array,content,key,constumer)
         return  res
     else:
         return "请求方法为POST",500
@@ -32,7 +33,8 @@ def product_dataProcess():
         mobiles_array = request.form["mobile"].split(",")
         content = request.form["content"]
         constumer = request.form["name"]
-        res = utils(mobiles_array,content,"5558-55f89f81d22f4b620fe52ce3dddb1463",constumer)
+        key = request.form["key"]
+        res = utils(mobiles_array,content,key,constumer)
         return  res
     else:
         return "请求方法为POST",500
