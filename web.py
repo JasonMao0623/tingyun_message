@@ -19,6 +19,7 @@ def utils(mobiles_array,content,sendkey,constumer):
 @app.route("/test/message",methods=["POST"])
 def test_dataProcess():
     if request.method =="POST":
+        print(request.form)
         mobiles_array = request.form["mobile"].split(",")
         content = request.form["content"]
         constumer = request.form["name"]
