@@ -17,7 +17,16 @@ def utils(mobiles_array,content):
             return "推送失败请确认请求参数", 500
     return "推送成功", 200
 @app.route("/test/message",methods=["POST"])
-def dataprocess():
+def test_dataprocess():
+    if request.method =="POST":
+        mobiles_array = request.form["mobile"].split(",")
+        content = request.form["content"]
+        res = utils(mobiles_array,content)
+        return  res
+    else:
+        return "请求方法为POST",500
+@app.route("/tongyong/message",methods=["POST"])
+def tongyong_dataprocess():
     if request.method =="POST":
         mobiles_array = request.form["mobile"].split(",")
         content = request.form["content"]
