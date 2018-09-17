@@ -18,7 +18,8 @@ def utils(content,sendkey,name):
 def test_dataProcess():
     if request.method =="POST":
         print(request.form)
-        content = request.form["content"]
+        template = "\n\n[![听云官网](https://saas.tingyun.com/static/website/images/ty-logo.png \"听云官网\")](https://www.tingyun.com \"听云官网\")\n\n**国内专业的应用性能监控平台**"
+        content = str(request.form["content"]) + template
         key = str(request.form["key"])
         name = str(request.form["name"])
         res = utils(content,key,name)
@@ -30,7 +31,8 @@ def test_dataProcess():
 def product_dataProcess():
     if request.method =="POST":
         print(request.form)
-        content = request.form["content"]
+        template ="\n\n[![听云官网](https://saas.tingyun.com/static/website/images/ty-logo.png \"听云官网\")](https://www.tingyun.com \"听云官网\")\n\n**国内专业的应用性能监控平台**"
+        content = str(request.form["content"])+template
         key = str(request.form["key"])
         name = str(request.form["name"])
         res = utils(content,key,name)
