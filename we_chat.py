@@ -1,5 +1,6 @@
 import requests
 import json
+import time
 def sendwx(content,sendKey):
     url = "https://pushbear.ftqq.com/sub"
     data={
@@ -11,7 +12,7 @@ def sendwx(content,sendKey):
     # print(json.loads(res.text))
     return res
 def sendwxnew(content,sendKey,title):
-    url = "https://tingyun.leanapp.cn/push"
+    url = "https://message-pro.mjjpipi.xyz/push"
     header={
         "content-type":"application/json"
     }
@@ -21,5 +22,20 @@ def sendwxnew(content,sendKey,title):
         "title":title
     }
     res = requests.post(url,json.dumps(data),headers=header)
-    print(json.loads(res.text))
+    # print(json.loads(res.text))
+    return res
+def send(content,sendKey,title,Type):
+    url = "https://message.mjjpipi.xyz/push"
+    header={
+        "content-type":"application/json"
+    }
+    data={
+        "channelName": sendKey,
+        "text": content,
+        "title":title,
+        "Type": Type,
+        "Time": time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+    }
+    res = requests.post(url,json.dumps(data),headers=header)
+    #print(json.loads(res.text))
     return res
